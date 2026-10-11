@@ -1,7 +1,6 @@
-# Local work and project documents
+# Local work
 /work/
 /outputs/
-/docs/
 
 # Downloaded ImageBuilder and build outputs
 /.cache/

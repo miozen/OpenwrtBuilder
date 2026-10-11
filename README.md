@@ -17,7 +17,10 @@
 
 所有构建参数统一保存在 `builder/build.env`。`dev` 分支的 push 不构建固件；合并到 `master` 后自动构建，也可在 `master` 上手动触发。
 
-详细执行契约、构建说明和升级验收文档保存在本地 `docs/`，不上传到 GitHub 仓库。
+项目协作知识位于受版本控制的 [`docs/`](docs/)：架构事实、决策记录、当前计划和交接状态分别见
+[`ARCHITECTURE.md`](docs/ARCHITECTURE.md)、[`DECISIONS.md`](docs/DECISIONS.md)、
+[`CURRENT_PLAN.md`](docs/CURRENT_PLAN.md) 与 [`HANDOFF.md`](docs/HANDOFF.md)。AI 开发与接力规范见根目录
+[`AGENTS.md`](AGENTS.md)。
 
 固件覆盖文件位于 `files/`。自定义仓库使用内置公钥完成标准 APK 签名验证。构建时先通过 ImageBuilder 的官方 `manifest` 命令计算完整软件包集合，再校验成品与计划清单一致。增量包包括 `openssh-sftp-server`，以及 LuCI 核心、防火墙、软件包管理和在线升级的简体中文翻译；Dropbear 仍作为默认 SSH 服务。
 
