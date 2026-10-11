@@ -69,3 +69,7 @@ For this repository, the user authorizes one normal commit and push to `dev`
 after each completed, verified task slice and its handoff update. Do not commit
 or push partial/unverified work merely to synchronize it. Never push directly
 to `master`; changes reach it only through the user-directed integration flow.
+
+Use GitHub SSH over port 443 for this repository's Git transport:
+`ssh://git@ssh.github.com:443/miozen/OpenwrtBuilder.git`. Before a handoff
+push, confirm `origin` still uses this URL; do not silently fall back to HTTPS.

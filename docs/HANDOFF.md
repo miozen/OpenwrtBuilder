@@ -14,10 +14,11 @@ HEAD, and the source named below.
 - Current local worktree expected by this handoff after the documentation
   checkpoint is committed and pushed: CLEAN.
 - Remote synchronization: the user authorized this completed documentation
-  slice to be pushed to `origin/dev`, but the 2026-10-11 HTTPS push failed
-  before authentication because this environment has no usable GitHub username
-  or credential. The documentation checkpoint remains local until credentials
-  are configured and the normal `git push origin dev` succeeds.
+  slice to be pushed to `origin/dev`. The prior HTTPS push failed before
+  authentication because this environment has no usable GitHub username or
+  credential. Per user direction, `origin` must instead use GitHub SSH over
+  port 443: `ssh://git@ssh.github.com:443/miozen/OpenwrtBuilder.git`.
+  Validate that transport and push the local checkpoints normally.
 
 ## Current phase and task
 
@@ -58,10 +59,10 @@ documentation checkpoint. No firmware/business-code task is active.
 
 ## Exact next action
 
-Do not start firmware/business development. Configure authorized GitHub Git
-credentials, then push the verified documentation checkpoint with `git push
-origin dev`; afterward wait for the user to select the next phase described in
-`CURRENT_PLAN.md`.
+Do not start firmware/business development. Verify the configured GitHub SSH
+over-443 transport and push the verified documentation checkpoints with `git
+push origin dev`; afterward wait for the user to select the next phase described
+in `CURRENT_PLAN.md`.
 
 ## Cross-computer readiness
 
