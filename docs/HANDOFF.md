@@ -17,8 +17,9 @@ HEAD, and the source named below.
   slice to be pushed to `origin/dev`. The prior HTTPS push failed before
   authentication because this environment has no usable GitHub username or
   credential. Per user direction, `origin` must instead use GitHub SSH over
-  port 443: `ssh://git@ssh.github.com:443/miozen/OpenwrtBuilder.git`.
-  Validate that transport and push the local checkpoints normally.
+  port 443: `ssh://git@ssh.github.com:443/miozen/OpenwrtBuilder.git`. That
+  transport was validated and the documentation checkpoints through
+  `8306e45` were pushed successfully to `origin/dev`.
 
 ## Current phase and task
 
@@ -36,6 +37,8 @@ documentation checkpoint. No firmware/business-code task is active.
   override is absent from the overlay; `git diff --check` and `git fsck` passed
   before this documentation change.
 - This session established the five document roles and protocols.
+- GitHub SSH over port 443 was configured and verified; the shared-document
+  checkpoint is now available on `origin/dev`.
 
 ## Verification status
 
@@ -59,13 +62,10 @@ documentation checkpoint. No firmware/business-code task is active.
 
 ## Exact next action
 
-Do not start firmware/business development. Verify the configured GitHub SSH
-over-443 transport and push the verified documentation checkpoints with `git
-push origin dev`; afterward wait for the user to select the next phase described
-in `CURRENT_PLAN.md`.
+Do not start firmware/business development. Wait for the user to select the
+next phase described in `CURRENT_PLAN.md`.
 
 ## Cross-computer readiness
 
-**Not ready.** The checkpoint is committed locally but not pushed. Once it is
-pushed, a second computer must fetch/pull `dev`, confirm a clean checkout, and
-run Session Start before continuing.
+**Ready.** A second computer can fetch/pull `dev`, confirm a clean checkout,
+and run Session Start before continuing.
